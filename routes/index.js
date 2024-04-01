@@ -93,6 +93,7 @@ try{
 
   let  response= await YoutubeTranscript.fetchTranscript(url).then(console.log("hi"));
   console.log(response);
+  
  
   if(response){
   
@@ -131,7 +132,7 @@ try{
 
   var blog = await blogModel.create({
     link:req.body.vurl,
-    blog:text,
+    blog:newtext,
     user:user._id
   });
 
