@@ -70,6 +70,7 @@ router.get('/',async function(req, res, next) {
 
 
   res.render('index', { user: req.user , text:newtext,blog:blogs});
+  newtext="";
 });
 
 router.get('/logout',function(req,res){
