@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="/images/building-2-fill.svg">
+    <title>bloggify</title>
+    <style>
+        .container {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .card {
+            width: 35vw;
+
+
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(12.5px);
+            -webkit-backdrop-filter: blur(12.5px);
+
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+
+
+        .box {
+            background: rgb(131, 58, 180);
+            background: linear-gradient(270deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+            --mask:
+    radial-gradient(72.48px at 50% calc(100% + 37.05px),#0000 calc(99% - 9px),#000 calc(101% - 9px) 99%,#0000 101%) calc(50% - 114px) calc(50% - 33px + .5px)/228px 66px ,
+    radial-gradient(72.48px at 50% -37.05px,#0000 calc(99% - 9px),#000 calc(101% - 9px) 99%,#0000 101%) 50% calc(50% + 33px)/228px 66px ;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+
+        }
+
+        input:focus {
+            border-color: #ff4500;
+        }
+
+
+        .navbar {
+            background: rgba(255, 255, 255, 0);
+            /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(18.5px);
+
+        }
+
+        @media (max-width: 768px) {
+            #cardd{
+
+
+                width: 100vw;
+                
+            }
+            #ccn{
+                width: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main h-screen w-screen flex flex-col p-10  ">
+        <div class="box fixed h-screen w-screen top-0 left-0 ">
+
+        </div>
+
+        <!-- nav bar start -->
+        <div class="navbasr px-2  flex justify-between items-center z-10">
+            <div class="logo text-black font-bold text-3xl">
+                <a href="/">
+                    dloggify</a>
+            </div>
+            <div class="menu cursor-pointer hover:bg-red-600 flex  items-center bg-red-400 p-2 text-pretty text-white rounded-md  font-semibold  text-xl">
+             <a href="/signup"> sing up</a> 
+            </div>
+        </div>
+        <!-- nav bar end -->
+        <div id="ccn" class="container flex justify-center h-full self-center rounded-full z-10">
+            <div id="cardd" class="card bg-white/70 rounded-3xl w-2/6 p-6 h-1/2 m-auto pb-10 ">
+                <h2 class="text-3xl text-black font-bold font-sans">Login</h2>
+                <form class="gap-4 items-center  flex  justify-center h-full  " action="/login" method="post">
+                    <input id="inputone" class="md:w-2/3 w-full h-10 pl-2 rounded-md border-2 border-gray-400" type="text" id="username" name="username"
+                        placeholder="Email" required>
+                    <input class="md:w-2/3 w-full h-10 pl-2 rounded-md border-2 border-gray-400" type="password" id="password" name="password"
+                        placeholder="Password" required>
+                    <button class="md:w-2/3 w-full h-10 bg-red-600 text-white font-sans font-semibold rounded-md border-2 border-red-400" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

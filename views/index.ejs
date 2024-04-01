@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/x-icon" href="/images/building-2-fill.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>bloggify</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+  <style>
+    :root {
+  --base-color: #ddd;
+  --shine-color: #e8e8e8;
+  --animation-duration: 1.6s;
+  --avatar-offset: calc(52px + 16px);
+}
+ .logo{
+  background: #121FCF;
+background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+ }
+ #createbtn{
+  background: #121FCF;
+ }
+
+ #ufoimg{
+
+
+  
+  
+}
+
+#ufoimg.animate{
+  
+  animation: ufoanimation 13s  cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s 1 normal both running;
+
+
+ }
+@keyframes ufoanimation {
+  /* 0%{
+    transform: translate(100px,100px);
+   
+    
+  }
+  100%{
+    transform: translateX(00px);
+    transform: translatey(00px);
+
+
+  } */
+  0% {
+        transform: translate(0px, 0px) rotate(0deg) scale(1, 1);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        border-radius: 0%;
+    }
+
+    6% {
+        transform: translate(100px, -29px) rotate(0deg) scale(1, 1);
+    }
+
+    25% {
+        
+    }
+
+    50% {
+        transform: scale(1) ;
+     
+    }
+
+    13.6% {
+        transform: translate(182px, -42px) rotate(0deg) scale(1, 1);
+    }
+
+    21.6% {
+        transform: translate(290px, 108px) rotate(0deg) scale(1, 1);
+    }
+
+    24.7% {
+        transform: translate(246px, 124px) rotate(0deg) scale(1, 1);
+    }
+
+    37.6% {
+        transform: translate(109px, 141px) scale(1.5) rotate(180deg);
+    }
+  
+}
+
+
+
+
+pre {
+    position: relative;
+    background: #d3d6db;
+    padding: 10px;
+    font-size: 15px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border: 1px solid #e6e7e9;
+}
+
+.copy-button {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  cursor: pointer;
+  margin-top: 3px;
+  color: #fff;
+  background: gray;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.copy-button:hover{
+  color: #000;
+}
+
+
+
+
+
+
+
+
+ .post {
+  width: 220px;
+  height: 80px;
+}
+.onel{
+
+  width: 1000px;
+}
+.twol{
+
+width: 700px;
+}
+
+/* Line */
+.post .line {
+  float: left;
+
+  height: 16px;
+  margin-top: 12px;
+  border-radius: 7px;
+  background-image: linear-gradient(90deg, var(--base-color) 0px, var(--shine-color) 40px, var(--base-color) 80px);
+  background-size: 600px;
+  animation: shine-lines var(--animation-duration) infinite ease-in-out;
+}
+
+/* Adjacent Lines */
+.post .line ~ .line {
+  background-color: #ddd;
+}
+
+
+/* Keyframes */
+@keyframes shine-lines {
+  0% {
+    background-position: -100px;
+  }
+  40%, 100% {
+    background-position: 740px;
+  }
+}
+
+
+.background-gradient {
+  background-image: linear-gradient(90deg, var(--base-color) 0px, var(--shine-color) 40px, var(--base-color) 80px);
+  background-size: 600px;
+}
+
+#crossbtn{
+  
+
+  display: none;
+
+  }
+
+
+
+@media (max-width: 768px) {
+
+  #left{
+
+    background-color: #CF1512;
+    position: absolute;
+    left: -200%;
+    transition: all .5s ease-in-out;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 90vw;
+    z-index: 8;
+    height: 100vh;
+  }
+  #main{
+
+    width: 100vw;
+  }
+  #right{
+
+    width: 100%;
+  }
+  #mm{
+    padding-left:0px ;
+    /* overflow: hidden; */
+
+    width: 100vw;
+  }
+  #nametext{
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  #menubtn{
+left: 2px;
+
+
+}
+#crossbtn{
+  
+  left: 10px;
+  display: none;
+
+  }
+  #ufoimg{
+    left: 10px;
+  }
+  
+}
+
+  </style>
+</head>
+
+<body >
+  <div id="mm" class="mm w-screen h-screen overflow-x-hidden ">
+    <img id="ufoimg" class="w-5 absolute z-10 top-10 left-10" src="/images/ufo.png" alt="">
+
+
+
+
+
+
+
+
+
+
+  
+  <div id="menubtn" class="menubtn cursor-pointer fixed flex justify-center items-center top-7 left-10 bg-red-600 rounded-full w-10 h-10 z-20" title="👽">
+    <i  class="ri-menu-line "></i>
+  </div>
+  
+  <div id="crossbtn" class="menubtn cursor-pointer fixed flex justify-center items-center top-7 left-10 bg-red-600 rounded-full w-10 h-10 z-20" title="👽">
+    <!-- <i class="ri-eye-close-line"></i> -->
+    <i class="ri-close-large-line"></i>
+    
+  
+  </div>
+
+
+
+
+
+
+
+
+
+  <div id="main" class="main font-mono  flex bg-zinc-50  w-screen min-h-screen h-fit">
+
+    <div id="left" class="left w-1/5 min-h-screen z-4 bg-zinc-100 h-fit px-3 pr-5 pl-10">
+      <!-- <img id="ufoimg" class="w-5 absolute top-10 left-10" src="/images/ufo.png" alt=""> -->
+      <div class="recent mt-36">Recent</div>
+      <div class="blogs">
+      
+
+        <ul class="pt-3.5 ">
+
+          <%blog?.forEach((e)=>{
+            %>
+            <li class="text-wrap my-5 font-semiboldcas text-gray-600 hover:text-black cursor-pointer dj" data-blog="<%=e.blog%>" data-link="<%=e.link%>">
+             <div class="fontse">
+               <%=e.blog.substring(2, 30)%>...
+              </div>
+              <div class="text-sm">
+               [<%=e.link%>]
+          
+            </div>
+            </li>
+            <hr><%
+            
+            
+          }
+
+
+
+
+          )%>
+
+        </ul>
+
+      </div>
+
+    </div>
+    <div id="right" class="right min-h-screen bg-zinc-50 w-full h-fit">
+      <!-- nav bar start -->
+      <div class="navbar px-12 py-7  flex justify-between items-center z-10">
+        <div class="logo text-black font-bold text-3xl">
+          <a href="/">
+          dloggify</a>
+        </div>
+        <div
+          class="menu cursor-pointer  flex gap-6  items-center hover:text-red-300 text-pretty text-red-700 rounded-md  font-semibold  text-xl">
+          <% if(user){
+          %> <a href="/logout"> logout</a><%
+          
+          }
+          else{
+
+            %>    <a href="/welcome"> login</a><%
+          }%>
+         
+      
+        </div>
+      </div>
+      <!-- nav bar end -->
+
+      <div id="nametext" class="nametext px-12 py-7   font-mono">
+       <span class="text-zinc-400 font-bold text-6xl">Hello,</span>  <span class="text-zinc-700 font-bold text-6xl "><%=user?.name%> </span> <br> <br>
+       <span class="text-zinc-400 text-xl py-10">"Transform YouTube videos into captivating blog articles effortlessly with our cutting-edge AI technology. Just paste the YouTube video link, and watch as our AI generates high-quality written content for you. Say goodbye to the hassle of manual transcription and content creation – let AI do the heavy lifting for you!"
+
+<form action="/create" method="post" class="mt-5 flex items-center gap-2">
+  <input type="text " id="mylinkinput" required name="vurl" class="w-full h-10 border-2 border-gray-400 pl-2 text-zinc-600" placeholder="https://youtube.com/@reallegends261?si=uCkszyuJzFkn02T1">
+  <button id="createbtn" name="submit"  type="submit" hidden></button>
+  <button id="tempbtn" class="p-2 bg-blue-800 text-white" >create</button>
+</form>
+
+
+
+       </span>
+       <%if(text){
+
+        %>
+        <!-- <div class="mt-4 text-pretty"><%=text%></div> -->
+
+
+        <pre id="myPreTag" class="mt-5  z-0  ntext"><%=text%></pre>
+
+
+
+
+
+        <%
+        
+      }
+      else{
+        
+        %>
+        
+         
+      <%
+       }
+       
+       %>
+      
+     
+       <div id="loadingbar" class="post mt-3" style="display: none;">
+   
+        <div class="line onel "></div>
+        <div class="line onel "></div>
+        <div class="line twol"></div>
+      </div>
+   <div id="preblog">
+    
+   </div>
+      
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const linkinput=document.querySelector("#mylinkinput");
+  var lleft=document.querySelector("#left");
+  var crossbtn=document.querySelector("#crossbtn");
+
+
+var menubtn=document.querySelector("#menubtn");
+  document.querySelectorAll(".dj").forEach((e)=>{
+
+e.addEventListener("click", ()=>{
+
+  var datablog=e.getAttribute("data-blog");
+  var datalink=e.getAttribute("data-link");
+  var ntext= document.querySelector(".ntext")
+  if(ntext){
+  ntext.style.display="none";
+
+}
+
+if(window.innerWidth<768){
+  lleft.style.left="-200%";
+   
+    menubtn.style.display="flex";
+      crossbtn.style.display="none";
+
+}
+
+
+
+  document.querySelector("#preblog").innerHTML=`<pre id="myPreTag" class="mt-5 z-3 recblog">${datablog}</pre>`;
+
+linkinput.value=datalink;
+
+
+})
+})
+
+
+document.querySelector("#tempbtn").addEventListener("click",()=>{
+
+ document.querySelector("#loadingbar").style.display="block";
+ var recblog=document.querySelector(".recblog")
+ if(recblog)
+ recblog.style.display="none";
+
+var ntext= document.querySelector(".ntext")
+if(ntext){
+  ntext.style.display="none";
+
+}
+
+ document.querySelector("#createbtn").click();
+
+
+})
+
+document.querySelector(".menubtn").addEventListener("click",()=>{
+
+var bee=  document.querySelector("#ufoimg");
+// bee.classList.add("animate");
+bee.classList.remove("animate"); // Remove the animate class
+    void bee.offsetWidth; // Trigger reflow to restart the animation
+    bee.classList.add("animate"); 
+    
+    
+    if(window.innerWidth<768){
+      lleft.style.left = "+0%";
+      
+      menubtn.style.display="none";
+      crossbtn.style.display="flex";
+    }
+  
+    
+
+});
+
+
+crossbtn.addEventListener("click",()=>{
+  lleft.style.left = "-120%";
+  menubtn.style.display="flex";
+  crossbtn.style.display="none";
+
+});
+
+
+
+const preTag = document.getElementById("myPreTag");
+
+
+
+if(preTag){
+
+// Create a copy button element
+const copyButton = document.createElement("span");
+copyButton.innerText = "Copy";
+copyButton.classList.add("copy-button");
+
+// Append the copy button to the <pre> tag
+preTag.appendChild(copyButton);
+
+// Add click event listener to the copy button
+copyButton.addEventListener("click", () => {
+  // Hide the copy button temporarily
+  copyButton.style.display = "none";
+
+  // Create a range and select the text inside the <pre> tag
+  const range = document.createRange();
+  range.selectNode(preTag);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+
+  try {
+    // Copy the selected text to the clipboard
+    document.execCommand("copy");
+  
+    // Alert the user that the text has been copied
+    copyButton.innerText = "Copied!";
+    setTimeout(function(){
+      copyButton.innerText = "Copy";
+    }, 2000);
+  } catch (err) {
+    console.error("Unable to copy text:", err);
+  } finally {
+    // Show the copy button again
+    copyButton.style.display = "inline";
+  
+    // Deselect the text
+    window.getSelection().removeAllRanges();
+  }
+});
+}
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
