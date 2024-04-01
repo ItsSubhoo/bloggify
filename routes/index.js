@@ -90,28 +90,36 @@ router.get('/logout',function(req,res){
 router.post('/create',async function(req, res){
 try{
   var url =req.body.vurl
-
-  let  response= await YoutubeTranscript.fetchTranscript(url).then(console.log("hi"));
+console.log("create1");
+  let  response= await YoutubeTranscript.fetchTranscript(url).then(console.log);
   console.log(response);
-
-if(response){
-
-  const concatenatedText = response.map(item => item.text).join(' ');
-  // console.log(concatenatedText);
+  if(response){
+  try{
 
 
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+console.log("gont a rsponce");
+    
+console.log(response);
+      const concatenatedText = response.map(item => item.text).join(' ');
+      // console.log(concatenatedText);
+    
+    
+      const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+    
+      const prompt = concatenatedText+"Using this context from a video make a professional blog ";
+    
+      const result = await model.generateContent(prompt);
+      const responseGemini =  result.response;
+      const text = responseGemini.text();
+      newtext=text;
+      console.log(text);
+    
+    }catch (err) {
+      console.log(err);
+    }
+      
+  } 
 
-  const prompt = concatenatedText+"Using this context from a video make a professional blog ";
-
-  const result = await model.generateContent(prompt);
-  const responseGemini =  result.response;
-  const text = responseGemini.text();
-  newtext=text;
-  console.log(text);
-
-}
-  
 
 
 
